@@ -62,10 +62,10 @@ export default function CopyCommandBar({
         <button
             type="button"
             onClick={handleCopy}
-            className={`flex items-center justify-center gap-2 rounded-xl border bg-black p-2 px-7 text-white transition hover:opacity-90 ${className}`}
+            className={`flex w-full items-center justify-center gap-2 rounded-xl border bg-black p-2 px-4 text-xs text-white transition hover:opacity-90 sm:w-auto sm:px-7 sm:text-sm ${className}`}
             aria-label={`Copy command: ${text}`}
         >
-            <span>{text}</span>
+            <span className="break-all">{text}</span>
             <span className="flex items-center gap-2">
                 {
                     copied ? 

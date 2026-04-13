@@ -4,12 +4,12 @@ import CopyCommandBar from "./copyCommandBar";
 
 export default function Hero() {
     return (
-        <section className="w-full flex flex-col items-center justify-center">
-            <div className="my-15 w-1/3 text-center">
-                <h1 className="text-8xl " style={{ fontFamily: "var(--font-jacquard-12)" }}>fizlint</h1>
-                <p className="">cli tool for real time linting of your code</p>
+        <section className="flex w-full flex-col items-center justify-center px-4 sm:px-6 md:px-10">
+            <div className="my-10 w-full max-w-xl text-center sm:my-12 md:my-16">
+                <h1 className="text-6xl sm:text-7xl md:text-8xl" style={{ fontFamily: "var(--font-jacquard-12)" }}>fizlint</h1>
+                <p className="text-sm sm:text-base">cli tool for real time linting of your code</p>
 
-                <div className="flex flex-col gap-3 py-6">
+                <div className="flex flex-col gap-3 py-5 sm:py-6">
                     <CopyCommandBar text="npm install -g fizlint" />
                     <Link href="/docs" className="text-gray-500">
                         Read the docs
@@ -17,7 +17,7 @@ export default function Hero() {
                     </Link>
                 </div>
             </div>
-            <Image src={"/hero.png"} alt="demo image" width={1200} height={600} className="w-2/3 pb-15" />
+            <Image src={"/hero.png"} alt="demo image" width={1200} height={600} className="w-full max-w-5xl pb-10 sm:w-5/6 sm:pb-12 md:w-2/3 md:pb-16" />
         </section>
     );
 }
