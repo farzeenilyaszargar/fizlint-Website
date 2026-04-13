@@ -17,7 +17,7 @@ export default function DocsPage() {
         <section className="mb-8 sm:mb-10">
           <h2 className="mb-3 text-xl sm:text-2xl">Install</h2>
           <div className="rounded-md border bg-gray-50 p-4">
-            <code>npm install -g fizlint</code>
+            <code>npm i fizzylint</code>
           </div>
         </section>
 
