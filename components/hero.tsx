@@ -5,7 +5,7 @@ import CopyCommandBar from "./copyCommandBar";
 export default function Hero() {
     return (
         <section className="w-full flex flex-col items-center justify-center">
-            <div className="my-10 w-1/3 text-center">
+            <div className="my-15 w-1/3 text-center">
                 <h1 className="text-8xl " style={{ fontFamily: "var(--font-jacquard-12)" }}>fizlint</h1>
                 <p className="">cli tool for real time linting of your code</p>
 
@@ -17,7 +17,7 @@ export default function Hero() {
                     </Link>
                 </div>
             </div>
-            <Image src={"/hero.png"} alt="demo image" width={1200} height={600} className="w-2/3 pb-10" />
+            <Image src={"/hero.png"} alt="demo image" width={1200} height={600} className="w-2/3 pb-15" />
         </section>
     );
 }
