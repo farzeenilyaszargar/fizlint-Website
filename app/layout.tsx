@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Jacquard_12, Jacquarda_Bastarda_9 } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const jacquardaBastarda = Jacquarda_Bastarda_9({
+  variable: "--font-jacquarda-bastarda",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const jacquard12 = Jacquard_12({
+  variable: "--font-jacquard-12",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -29,8 +36,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({  children,}: Readonly<{  children: React.ReactNode;}>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${geistMono.variable} ${jacquardaBastarda.variable} ${jacquard12.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col" style={{ fontFamily: "var(--font-geist-mono)" }}>
+        {children}
+      </body>
     </html>
   );
 }
