@@ -32,6 +32,17 @@ export const metadata: Metadata = {
     "code quality",
     "development workflow",
   ],
+  openGraph: {
+    title: "fizlint | the live linter for js and ts",
+    description: "fizlint is a live linter for JavaScript and TypeScript that provides real-time feedback and suggestions to help developers write cleaner and more efficient code.",
+    images: ["/og-image.jpeg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "fizlint | the live linter for js and ts",
+    description: "fizlint is a live linter for JavaScript and TypeScript that provides real-time feedback and suggestions to help developers write cleaner and more efficient code.",
+    images: ["/og-image.jpeg"],
+  },
 };
 
 export default function RootLayout({  children,}: Readonly<{  children: React.ReactNode;}>) {
