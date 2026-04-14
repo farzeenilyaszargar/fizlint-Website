@@ -7,7 +7,7 @@ export default function Navbar() {
                 <Link href="/" className="text-2xl font-bold sm:text-3xl" style={{ fontFamily: "var(--font-jacquarda-bastarda)" }}>fizlint</Link>
                 <ul className="flex items-center gap-4 text-sm sm:gap-5 sm:text-base">
                     <li><Link href="/docs">Docs</Link></li>
-                    <li><Link href="https://github.com/farzeenilyaszargar/fizlint">GitHub</Link></li>
+                    <li><Link href="https://github.com/farzeenilyaszargar/fizlint" target="_blank">GitHub</Link></li>
                 </ul>
             </div>
         </nav>

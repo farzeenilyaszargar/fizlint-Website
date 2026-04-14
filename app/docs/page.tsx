@@ -1,8 +1,11 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import CopyCommandBar from "@/components/copyCommandBar";
+import Image from "next/image";
 
 export default function DocsPage() {
+  const docsCopyButtonClass = "bg-gray-200 hover:bg-gray-300 border-gray-400 !text-black";
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
@@ -14,7 +17,6 @@ export default function DocsPage() {
         <p className="mb-8 text-sm text-gray-700 sm:mb-10 sm:text-base">
           Real-time linting and code analysis for JavaScript and TypeScript projects.
         </p>
-
         <section className="mb-8 sm:mb-10">
           <h2 className="mb-3 text-xl sm:text-2xl">Overview</h2>
           <p className="mb-3 text-sm text-gray-700 sm:text-base">
@@ -35,7 +37,7 @@ export default function DocsPage() {
             Run directly with NPX (no global install required):
           </p>
           <div className="mb-3 rounded-md border bg-gray-50 p-4">
-            <CopyCommandBar text="npx fizzylint" />
+            <CopyCommandBar text="npx fizzylint" className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
             <p className="mt-3 text-xs text-gray-600 sm:text-sm">
               Downloads and runs fizzylint instantly for the current session without requiring a global package install.
             </p>
@@ -59,53 +61,36 @@ export default function DocsPage() {
           <h2 className="mb-3 text-xl sm:text-2xl">Command Reference</h2>
           <div className="space-y-3">
             <div className="rounded-md border bg-gray-50 p-4">
-              <CopyCommandBar text="fizzylint ." />
+              <CopyCommandBar text="fizzylint ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Runs fizzylint on the current folder using its default behavior, giving you a quick full-project check.
               </p>
             </div>
             <div className="rounded-md border bg-gray-50 p-4">
-              <CopyCommandBar text="fizzylint fix ." />
+              <CopyCommandBar text="fizzylint fix ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Automatically fixes supported issues such as formatting and straightforward rule violations across the project.
               </p>
             </div>
             <div className="rounded-md border bg-gray-50 p-4">
-              <CopyCommandBar text="fizzylint lint ." />
+              <CopyCommandBar text="fizzylint lint ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Performs lint checks only and prints diagnostics without changing your files.
               </p>
             </div>
             <div className="rounded-md border bg-gray-50 p-4">
-              <CopyCommandBar text="fizzylint watch" />
+              <CopyCommandBar text="fizzylint watch" className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Starts watch mode and continuously re-runs linting whenever files change, so feedback appears while you code.
               </p>
             </div>
             <div className="rounded-md border bg-gray-50 p-4">
-              <CopyCommandBar text="fizzylint analysis ." />
+              <CopyCommandBar text="fizzylint analysis ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Generates a project quality score and deeper analysis summary to help prioritize maintainability improvements.
               </p>
             </div>
           </div>
-        </section>
-
-        <section className="mb-8 sm:mb-10">
-          <h2 className="mb-3 text-xl sm:text-2xl">Recommended Workflow</h2>
-          <div className="mb-3 rounded-md border bg-gray-50 p-4">
-            <CopyCommandBar text="fizzylint lint .; fizzylint fix .; fizzylint analysis ." />
-            <p className="mt-3 text-xs text-gray-600 sm:text-sm">
-              Lints first, applies supported fixes second, then reports analysis score and deeper code health insights.
-            </p>
-          </div>
-          <p className="text-xs text-gray-600 sm:text-sm">
-            This flow catches problems, applies supported fixes, and then gives you a quality score plus
-            analysis summary for final review.
-          </p>
-          <p className="mt-2 text-xs text-gray-600 sm:text-sm">
-            During active development, run <code>fizzylint watch</code> in a separate terminal for immediate feedback.
-          </p>
         </section>
 
         <section className="mb-8 sm:mb-10">
@@ -142,7 +127,7 @@ export default function DocsPage() {
           </ul>
         </section>
 
-        <section>
+        <section className="mb-8 sm:mb-10">
           <h2 className="mb-3 text-xl sm:text-2xl">Troubleshooting</h2>
           <div className="space-y-3 text-sm sm:text-base">
             <div className="rounded-md border bg-gray-50 p-4">
@@ -158,6 +143,38 @@ export default function DocsPage() {
               <p className="mt-1 text-gray-700">Use <code>fizzylint watch</code> so new problems are surfaced as soon as files change.</p>
             </div>
           </div>
+        </section>
+
+        <section className="mt-2 rounded-2xl border bg-gray-50 p-4 sm:p-6">
+          <h2 className="mb-2 text-2xl sm:text-3xl" style={{ fontFamily: "var(--font-jacquarda-bastarda)" }}>
+            Check out on npm
+          </h2>
+          <p className="mb-4 text-sm text-gray-700 sm:text-base">
+            Visit the official package page for installs, version info, and usage updates.
+          </p>
+          <a
+            href="https://www.npmjs.com/package/fizzylint"
+            target="_blank"
+            rel="noreferrer"
+            className="mb-5 inline-flex items-center text-lg text-gray-800 underline underline-offset-4 hover:text-black sm:text-xl"
+          >
+            Open fizzylint package
+            <Image
+              src="/right-arrow.png"
+              alt="open npm"
+              width={16}
+              height={16}
+              className="ml-1 inline-block -rotate-45"
+              aria-hidden="true"
+            />
+          </a>
+          <Image
+            src="/npm.png"
+            alt="fizzylint package preview"
+            width={1800}
+            height={1000}
+            className="h-auto w-full rounded-xl border bg-white p-1"
+          />
         </section>
       </main>
 

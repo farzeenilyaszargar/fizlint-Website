@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 type CopyCommandBarProps = {
     className?: string;
+    copyIconSrc?: string;
+    iconTheme?: "light" | "dark";
     text: string;
 };
 
@@ -27,6 +29,8 @@ async function copyText(text: string) {
 
 export default function CopyCommandBar({
     className = "",
+    copyIconSrc = "/copy.svg",
+    iconTheme = "light",
     text,
 }: CopyCommandBarProps) {
     const [copied, setCopied] = useState(false);
@@ -58,6 +62,8 @@ export default function CopyCommandBar({
         }
     };
 
+    const iconClassName = iconTheme === "light" ? "invert" : "";
+
     return (
         <button
             type="button"
@@ -69,9 +75,9 @@ export default function CopyCommandBar({
             <span className="flex items-center gap-2">
                 {
                     copied ? 
-                    <Image src="/tick.png" alt="Copied" width={16} height={17} className="invert" aria-hidden="true" />
+                    <Image src="/tick.png" alt="Copied" width={16} height={17} className={iconClassName} aria-hidden="true" />
                     :
-                    <Image src="/copy.svg" alt="Copy" width={15} height={15} className="invert" aria-hidden="true" />
+                    <Image src={copyIconSrc} alt="Copy" width={15} height={15} className={iconClassName} aria-hidden="true" />
                 }
                 
             </span>
