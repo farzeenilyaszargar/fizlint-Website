@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "fizlint | the live linter for js and ts",
     description: "fizlint is a live linter for JavaScript and TypeScript that provides real-time feedback and suggestions to help developers write cleaner and more efficient code.",
-    images: ["/og-image.jpeg"],
+    images: ["/og-img.jpeg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "fizlint | the live linter for js and ts",
     description: "fizlint is a live linter for JavaScript and TypeScript that provides real-time feedback and suggestions to help developers write cleaner and more efficient code.",
-    images: ["/og-image.jpeg"],
+    images: ["/og-img.jpeg"],
   },
 };
 
