@@ -10,7 +10,7 @@ export default function Hero() {
                 <p className="text-sm sm:text-base">cli tool for real time linting of your code</p>
 
                 <div className="flex flex-col gap-3 py-5 sm:pt-6 sm:w-1/2">
-                    <CopyCommandBar text="npm install -g fizzylint" copyIconSrc="/copy-dark.svg" />
+                    <CopyCommandBar text="npm i -g fizzylint" copyIconSrc="/copy-dark.svg" />
                     <Link href="https://www.npmjs.com/package/fizzylint" target="_blank" className="text-gray-500">
                         Check out on npm
                         <Image src="/right-arrow.png" alt="arrow right" width={15} height={15} className="grayscale-75 inline-block ml-1 rounded-xl" aria-hidden="true" />
