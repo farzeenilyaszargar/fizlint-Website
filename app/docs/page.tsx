@@ -156,7 +156,7 @@ export default function DocsPage() {
             href="https://www.npmjs.com/package/fizzylint"
             target="_blank"
             rel="noreferrer"
-            className="mb-5 inline-flex items-center text-lg text-gray-800 underline underline-offset-4 hover:text-black sm:text-xl"
+            className="mb-5 inline-flex items-center text-md text-gray-800 underline underline-offset-4 hover:text-black sm:text-lg"
           >
             Open fizzylint package
             <Image
