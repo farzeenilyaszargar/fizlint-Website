@@ -36,7 +36,7 @@ export default function DocsPage() {
           <p className="mb-3 text-sm text-gray-700 sm:text-base">
             Run directly with NPX (no global install required):
           </p>
-          <div className="mb-3 rounded-md border bg-gray-50 p-4">
+          <div className="mb-3 rounded-md border border-gray-200 bg-gray-50 p-4">
             <CopyCommandBar text="npx fizzylint" className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
             <p className="mt-3 text-xs text-gray-600 sm:text-sm">
               Downloads and runs fizzylint instantly for the current session without requiring a global package install.
@@ -60,31 +60,31 @@ export default function DocsPage() {
         <section className="mb-8 sm:mb-10">
           <h2 className="mb-3 text-xl sm:text-2xl">Command Reference</h2>
           <div className="space-y-3">
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <CopyCommandBar text="fizzylint ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Runs fizzylint on the current folder using its default behavior, giving you a quick full-project check.
               </p>
             </div>
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <CopyCommandBar text="fizzylint fix ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Automatically fixes supported issues such as formatting and straightforward rule violations across the project.
               </p>
             </div>
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <CopyCommandBar text="fizzylint lint ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Performs lint checks only and prints diagnostics without changing your files.
               </p>
             </div>
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <CopyCommandBar text="fizzylint watch" className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Starts watch mode and continuously re-runs linting whenever files change, so feedback appears while you code.
               </p>
             </div>
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <CopyCommandBar text="fizzylint analysis ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
                 Generates a project quality score and deeper analysis summary to help prioritize maintainability improvements.
@@ -130,22 +130,22 @@ export default function DocsPage() {
         <section className="mb-8 sm:mb-10">
           <h2 className="mb-3 text-xl sm:text-2xl">Troubleshooting</h2>
           <div className="space-y-3 text-sm sm:text-base">
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <p className="font-semibold">Command not found</p>
               <p className="mt-1 text-gray-700">Run with <code>npx fizzylint</code> to ensure the package is resolved correctly.</p>
             </div>
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <p className="font-semibold">Too many issues at once</p>
               <p className="mt-1 text-gray-700">Start with <code>fizzylint fix .</code>, then run <code>fizzylint lint .</code> to review remaining items.</p>
             </div>
-            <div className="rounded-md border bg-gray-50 p-4">
+            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
               <p className="font-semibold">Need continuous checks</p>
               <p className="mt-1 text-gray-700">Use <code>fizzylint watch</code> so new problems are surfaced as soon as files change.</p>
             </div>
           </div>
         </section>
 
-        <section className="mt-2 rounded-2xl border bg-gray-50 p-4 sm:p-6">
+        <section className="mt-2 rounded-2xl border border-gray-200 bg-gray-50 p-4 sm:p-6">
           <h2 className="mb-2 text-2xl sm:text-3xl" style={{ fontFamily: "var(--font-jacquarda-bastarda)" }}>
             Check out on npm
           </h2>
