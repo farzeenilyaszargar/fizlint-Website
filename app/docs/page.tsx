@@ -15,19 +15,18 @@ export default function DocsPage() {
           fizlint docs
         </h1>
         <p className="mb-8 text-sm text-gray-700 sm:mb-10 sm:text-base">
-          Real-time linting and code analysis for JavaScript and TypeScript projects.
+          Small CLI linting for JavaScript and TypeScript projects.
         </p>
         <section className="mb-8 sm:mb-10">
           <h2 className="mb-3 text-xl sm:text-2xl">Overview</h2>
           <p className="mb-3 text-sm text-gray-700 sm:text-base">
-            fizzylint helps you detect issues early, auto-fix common problems, and keep your project quality
-            consistent over time. It is built for fast feedback while writing code and quick quality checks
-            before commits or releases.
+            fizzylint is a small terminal linter that scans JavaScript and TypeScript files for a few common
+            mistakes and style issues. It is intentionally simple, quick to run, and easy to understand.
           </p>
           <ul className="list-disc space-y-2 pl-6 text-sm sm:text-base">
             <li>Works on JavaScript and TypeScript codebases.</li>
-            <li>Supports lint-only, auto-fix, watch mode, and analysis mode.</li>
-            <li>Produces actionable diagnostics and project-level quality insights.</li>
+            <li>Supports plain linting and a small auto-fix mode.</li>
+            <li>Designed as a lightweight CLI project with minimal setup.</li>
           </ul>
         </section>
 
@@ -51,9 +50,9 @@ export default function DocsPage() {
           <h2 className="mb-3 text-xl sm:text-2xl">Quick Start</h2>
           <ol className="list-decimal space-y-2 pl-6">
             <li>Open your JavaScript or TypeScript project folder.</li>
-            <li>Run <code>fizzylint lint .</code> to scan the project.</li>
+            <li>Run <code>fizzylint</code> or <code>fizzylint lint .</code> to scan the project.</li>
             <li>Run <code>fizzylint fix .</code> to apply supported fixes.</li>
-            <li>Run <code>fizzylint watch</code> for continuous feedback while coding.</li>
+            <li>Run <code>fizzylint help</code> if you want to see the available commands.</li>
           </ol>
         </section>
 
@@ -79,15 +78,9 @@ export default function DocsPage() {
               </p>
             </div>
             <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
-              <CopyCommandBar text="fizzylint watch" className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
+              <CopyCommandBar text="fizzylint help" className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
               <p className="mt-3 text-xs text-gray-600 sm:text-sm">
-                Starts watch mode and continuously re-runs linting whenever files change, so feedback appears while you code.
-              </p>
-            </div>
-            <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
-              <CopyCommandBar text="fizzylint analysis ." className={docsCopyButtonClass} iconTheme="dark" copyIconSrc="/copy-dark.svg" />
-              <p className="mt-3 text-xs text-gray-600 sm:text-sm">
-                Generates a project quality score and deeper analysis summary to help prioritize maintainability improvements.
+                Prints the small built-in help message with the current commands.
               </p>
             </div>
           </div>
@@ -97,33 +90,33 @@ export default function DocsPage() {
           <h2 className="mb-3 text-xl sm:text-2xl">What It Checks</h2>
           <ul className="list-disc space-y-2 pl-6">
             <li>Trailing whitespace</li>
-            <li>Unused variables</li>
-            <li>Unreachable code</li>
-            <li>Long lines and logical pattern issues</li>
-            <li>Project-level quality score and analysis summary</li>
+            <li>Loose equality such as <code>==</code> and <code>!=</code></li>
+            <li><code>var</code> usage</li>
+            <li><code>console.log</code>, <code>console.debug</code>, and <code>console.info</code></li>
+            <li><code>debugger</code> statements</li>
           </ul>
         </section>
 
         <section className="mb-8 sm:mb-10">
-          <h2 className="mb-3 text-xl sm:text-2xl">Understanding Analysis Score</h2>
+          <h2 className="mb-3 text-xl sm:text-2xl">What Fix Mode Changes</h2>
           <p className="mb-3 text-sm text-gray-700 sm:text-base">
-            <code>fizzylint analysis .</code> provides a project health score and highlights weak areas that need attention.
+            <code>fizzylint fix .</code> only applies the small safe fixes that are built into the CLI.
           </p>
           <ul className="list-disc space-y-2 pl-6 text-sm sm:text-base">
-            <li><strong>90-100:</strong> Excellent quality and maintainability.</li>
-            <li><strong>75-89:</strong> Good baseline with a few issues to clean up.</li>
-            <li><strong>50-74:</strong> Medium risk; prioritize fixes before scaling changes.</li>
-            <li><strong>Below 50:</strong> High risk; recommended to address major lint and logic issues first.</li>
+            <li>Removes trailing whitespace.</li>
+            <li>Upgrades <code>==</code> to <code>===</code>.</li>
+            <li>Upgrades <code>!=</code> to <code>!==</code>.</li>
+            <li>Leaves the other warnings as review-only issues.</li>
           </ul>
         </section>
 
         <section className="mb-8 sm:mb-10">
           <h2 className="mb-3 text-xl sm:text-2xl">When To Use Each Command</h2>
           <ul className="list-disc space-y-2 pl-6 text-sm sm:text-base">
+            <li>Use <code>fizzylint</code> for the quickest project scan.</li>
             <li>Use <code>fizzylint lint .</code> before every commit.</li>
             <li>Use <code>fizzylint fix .</code> after a refactor or formatting-heavy changes.</li>
-            <li>Use <code>fizzylint watch</code> while actively coding.</li>
-            <li>Use <code>fizzylint analysis .</code> before PR review or release.</li>
+            <li>Use <code>fizzylint help</code> when you forget the command list.</li>
           </ul>
         </section>
 
@@ -139,8 +132,8 @@ export default function DocsPage() {
               <p className="mt-1 text-gray-700">Start with <code>fizzylint fix .</code>, then run <code>fizzylint lint .</code> to review remaining items.</p>
             </div>
             <div className="rounded-md border border-gray-200 bg-gray-50 p-4">
-              <p className="font-semibold">Need continuous checks</p>
-              <p className="mt-1 text-gray-700">Use <code>fizzylint watch</code> so new problems are surfaced as soon as files change.</p>
+              <p className="font-semibold">Not sure what commands exist</p>
+              <p className="mt-1 text-gray-700">Run <code>fizzylint help</code> to print the current command list.</p>
             </div>
           </div>
         </section>
